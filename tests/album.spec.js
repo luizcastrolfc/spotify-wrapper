@@ -23,7 +23,7 @@ describe('Album', () => {
     })
     it('should be called with the rigth url', () => {
       const albuns = getAlbum('6ymZBbRSmzAvoSGmwAFoxm')
-      expect(global.fetch).toBeCalledWith('https://api.spotify.com/v1/albums/6ymZBbRSmzAvoSGmwAFoxm')
+      expect(global.fetch).toBeCalledWith('https://api.spotify.com/v1/albums/6ymZBbRSmzAvoSGmwAFoxm', {"headers": {"Authorization": "'Bearer BQBmSJ-_OC_RmpX8ta1Fc0-5Hxq5V1MhMHiD8YIVpo_UOTq680mPs3RJdDga0QmlyvDK0y-zW9NlVAC9p-0IKJpa0QJok77CNln3fJsZr7QsXozo-SJqOg5zr25GTw-uk9TNk5bKJXXI'"}})
     });
   })
 
@@ -34,7 +34,7 @@ describe('Album', () => {
     })
     it('should be called with the rigth url', () => {
       const albuns = getAlbums(['6ymZBbRSmzAvoSGmwAFoxm', '6ymZBbRSmzAvoSGmwAFoxn'])
-      expect(global.fetch).toBeCalledWith('https://api.spotify.com/v1/albums?ids=6ymZBbRSmzAvoSGmwAFoxm,6ymZBbRSmzAvoSGmwAFoxn')
+      expect(global.fetch).toBeCalledWith('https://api.spotify.com/v1/albums?ids=6ymZBbRSmzAvoSGmwAFoxm,6ymZBbRSmzAvoSGmwAFoxn', {"headers": {"Authorization": "'Bearer BQBmSJ-_OC_RmpX8ta1Fc0-5Hxq5V1MhMHiD8YIVpo_UOTq680mPs3RJdDga0QmlyvDK0y-zW9NlVAC9p-0IKJpa0QJok77CNln3fJsZr7QsXozo-SJqOg5zr25GTw-uk9TNk5bKJXXI'"}})
     });
   })
 
@@ -45,7 +45,7 @@ describe('Album', () => {
     })
     it('should be called with the rigth url', () => {
       const albuns = getAlbumTracks('6ymZBbRSmzAvoSGmwAFoxm')
-      expect(global.fetch).toBeCalledWith('https://api.spotify.com/v1/albums/6ymZBbRSmzAvoSGmwAFoxm/tracks')
+      expect(global.fetch).toBeCalledWith('https://api.spotify.com/v1/albums/6ymZBbRSmzAvoSGmwAFoxm/tracks', {"headers": {"Authorization": "'Bearer BQBmSJ-_OC_RmpX8ta1Fc0-5Hxq5V1MhMHiD8YIVpo_UOTq680mPs3RJdDga0QmlyvDK0y-zW9NlVAC9p-0IKJpa0QJok77CNln3fJsZr7QsXozo-SJqOg5zr25GTw-uk9TNk5bKJXXI'"}})
     });
   })
 })

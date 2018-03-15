@@ -1,16 +1,24 @@
 {
-  "name": "js-tdd-course",
+  "name": "spotify-api-wrapper-do-luiz",
   "version": "1.0.0",
-  "description": "Udemy js com tdd",
-  "main": "src/index.js",
+  "description": "Wrapper da api do spotify",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "webpack --mode production",
+    "clear" : "rimraf lib",
+    "build": "yarn clear && babel --out-dir lib src",
+    "build:umd": "webpack --output-filename spotify-api-wrapper.umd.js --mode development",
+    "build:umd:min": "webpack --output-filename spotify-api-wrapper.umd.min.js --mode production",
+    "build:all": "yarn build && yarn build:umd && yarn build:umd:min",
     "dev": "webpack-dev-server --mode development",
     "lint": "./node_modules/.bin/eslint src/*.js ",
     "prepush": "npm run lint",
     "test": "jest",
     "test:tdd": "mocha tests/**/*.js --watch"
   },
+  "files": [
+    "dist",
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luizcastrolfc/js-tdd-course.git"
@@ -27,6 +35,7 @@
   },
   "homepage": "https://github.com/luizcastrolfc/js-tdd-course#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.4",
@@ -41,6 +50,7 @@
     "husky": "^0.14.3",
     "jest": "^22.4.2",
     "node-fetch": "^2.1.1",
+    "rimraf": "^2.6.2",
     "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.10",

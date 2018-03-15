@@ -1,8 +1,8 @@
 /* global fetch */
-import { API_URL } from './config'
+import { API_URL, HEADERS } from './config'
 
 export const search = async (query, type) => {
-  const resp = await fetch(`${API_URL}/search?q=${query}&type=${type}`)
+  const resp = await fetch(`${API_URL}/search?q=${query}&type=${type}`, HEADERS)
   return resp.json()
 }
 export const searchAlbums = async query => search(query, 'album')
