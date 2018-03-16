@@ -10,11 +10,12 @@
 
     <script src="../dist/spotify-api-wrapper.umd.js "></script>
     <script>
+        const spotify = new SpotifyWrapper({
+            token: 'BQBJvHd2qLaQYz1QD-13yg72o25cAOfo3jhCSyf8UnGUYMehapmIuSFAxSdf5oap_49v5Yin97e9PihlGj168T_0ARyptdRwyfbWsNIWSRLWt950CsacMPn1gmuwy-wCd3p602_TcKVo'
+        })
         async function printAlbums() {
-            const albums = await SpotifyAPIWrapeper.searchAlbums('pixies')
-            albums.albums.items.map((item) => {
-                console.log(item.name)
-            })
+            const data = await spotify.search.Albums('Pixies')
+            console.log(data.albums.items)
         }
         printAlbums()
 

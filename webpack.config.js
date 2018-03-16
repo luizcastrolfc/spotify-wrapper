@@ -2,9 +2,9 @@ const path = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const config = {
-  entry: './src/index.js',
+  entry: './index.js',
   output: {
-    library: 'SpotifyAPIWrapeper',
+    library: 'SpotifyWrapper',
     libraryTarget: 'umd',
     filename: './build.js',
     path: path.resolve(__dirname, 'dist')
